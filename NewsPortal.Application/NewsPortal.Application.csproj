@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="NewsPortal.Domain">
+      <HintPath>..\NewsPortal.Domain\bin\Debug\net8.0\NewsPortal.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="NewsPortal.Infrastructure">
+      <HintPath>..\NewsPortal.Infrastructure\bin\Debug\net8.0\NewsPortal.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
