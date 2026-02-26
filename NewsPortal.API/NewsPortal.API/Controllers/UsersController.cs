@@ -46,7 +46,7 @@ namespace NewsPortal.API.Controllers
             public int DeptId { get; set; }
             public double Salary { get; set; }
         }
-        class Department
+        class Department //testing
         {
             public int Id { get; set; }
             public string Name { get; set; }
