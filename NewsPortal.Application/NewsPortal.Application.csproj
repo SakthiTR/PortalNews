@@ -10,9 +10,6 @@
     <Reference Include="NewsPortal.Domain">
       <HintPath>..\NewsPortal.Domain\bin\Debug\net8.0\NewsPortal.Domain.dll</HintPath>
     </Reference>
-    <Reference Include="NewsPortal.Infrastructure">
-      <HintPath>..\NewsPortal.Infrastructure\bin\Debug\net8.0\NewsPortal.Infrastructure.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

@@ -39,50 +39,10 @@ namespace NewsPortal.API.Controllers
             return Ok(user);
         }
 
-       public  class Employee
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public int DeptId { get; set; }
-            public double Salary { get; set; }
-        }
-        class Department //test
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-        }
-
         [AllowAnonymous]
         [HttpGet("GetAllUser")]
         public async Task<IActionResult> GetAllUser()
-        {
-            var employees = new List<Employee>
-            {
-                new Employee { Id = 1, Name = "Ravi", DeptId = 1, Salary = 30000 },
-                new Employee { Id = 2, Name = "Anu", DeptId = 2, Salary = 60000 },
-                new Employee { Id = 3, Name = "Kumar", DeptId = 1, Salary = 80000 },
-                new Employee { Id = 4, Name = "Meena", DeptId = 3, Salary = 40000 }
-            };
-
-            var result = employees.Where(x => x.Salary > 50000);
-            var highpaid = employees.OrderByDescending(x => x.Salary).Take(3);
-            bool hr = employees.Any(x => x.Id == 2);
-            var tot = employees.GroupBy(x => x.Id).Select(q => new
-            {
-                Id = q.Key,
-                TotalSal = q.Count(),
-            });
-
-
-            //var nameresult = employees.Select(x => x.Name).ToList();
-
-            var res = employees.Max(x => x.Salary);
-            var res1 = employees.OrderByDescending(x => x.Salary).FirstOrDefault();
-            
-           
-            var page = employees.OrderBy(x => x.Id).Take(10).Skip(0);
-            var dublicatename = employees.GroupBy(a => a.Name).Select(x => x.FirstOrDefault());
-                 
+        {       
             var users = await _userService.GetAllUsersAsync();
             return Ok(users);
         }

@@ -22,8 +22,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NewsPortal.Application\NewsPortal.Application.csproj" />
-    <ProjectReference Include="..\NewsPortal.Domain\NewsPortal.Domain.csproj" />
     <ProjectReference Include="..\NewsPortal.Infrastructure\NewsPortal.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NewsPortal.Domain">
+      <HintPath>..\NewsPortal.Domain\bin\Debug\net8.0\NewsPortal.Domain.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
