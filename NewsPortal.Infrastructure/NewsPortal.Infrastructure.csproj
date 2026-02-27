@@ -20,9 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="NewsPortal.Application">
-      <HintPath>..\NewsPortal.Application\bin\Debug\net8.0\NewsPortal.Application.dll</HintPath>
-    </Reference>
     <Reference Include="NewsPortal.Domain">
       <HintPath>..\NewsPortal.Domain\bin\Debug\net8.0\NewsPortal.Domain.dll</HintPath>
     </Reference>
@@ -30,6 +27,10 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewsPortal.Application\NewsPortal.Application.csproj" />
   </ItemGroup>
 
 </Project>
