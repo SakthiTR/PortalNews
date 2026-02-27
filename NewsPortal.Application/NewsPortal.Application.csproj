@@ -7,15 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="NewsPortal.Domain">
-      <HintPath>..\NewsPortal.Domain\bin\Debug\net8.0\NewsPortal.Domain.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewsPortal.Domain\NewsPortal.Domain.csproj" />
   </ItemGroup>
 
 </Project>
