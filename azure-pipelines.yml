@@ -1,0 +1,31 @@
+trigger:
+- master
+
+pool:
+  name: Default
+
+variables:
+  buildConfiguration: Release
+
+steps:
+
+- task: UseDotNet@2
+  displayName: Install .NET SDK
+  inputs:
+    packageType: sdk
+    version: 8.0.x
+
+- script: dotnet restore NewsPortal.sln
+  displayName: Restore Solution
+
+- script: dotnet build NewsPortal.sln --configuration $(buildConfiguration)
+  displayName: Build Solution
+
+- script: dotnet publish NewsPortal.API/NewsPortal.API.csproj --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --no-build
+  displayName: Publish API
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifacts
+  inputs:
+    PathtoPublish: $(Build.ArtifactStagingDirectory)
+    ArtifactName: drop
